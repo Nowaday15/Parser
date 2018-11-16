@@ -24,7 +24,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://high-volume-music.000webhostapp.com/public_html/parser/</InstallUrl>
+    <InstallUrl>https://high-volume-music.000webhostapp.com/parser/</InstallUrl>
     <SupportUrl>https://vk.com/hvmlabel</SupportUrl>
     <ErrorReportUrl>https://vk.com/hvmlabel</ErrorReportUrl>
     <TargetCulture>ru</TargetCulture>
@@ -34,7 +34,7 @@
     <MinimumRequiredVersion>1.0.2.84</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>91</ApplicationRevision>
+    <ApplicationRevision>93</ApplicationRevision>
     <ApplicationVersion>1.0.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

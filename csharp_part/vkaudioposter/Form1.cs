@@ -21,6 +21,7 @@ using IronPython.Hosting;
 using Microsoft.Scripting.Hosting;
 using Microsoft.Scripting.Hosting.Providers;
 using IronPython.Runtime;
+using System.Collections.ObjectModel;
 //using ExtensionMethods;
 
 
@@ -456,9 +457,10 @@ namespace vkaudioposter
                     Invoke(new Action(() =>
                      {
                                      //  label6.Text = "Ищем в поиске треки";
-                                     PB_Download.Value += 1;
-                         if (PB_Download.Value == 99)
+                                     
+                         if (PB_Download.Value >= PB_Download.Maximum-1)
                              PB_Download.Value = 0;
+                         PB_Download.Value += 1;
                      }));
                     //---------------------------НЕ РАБОТАЕТ ПУБЛИЧНЫЙ АПИ----------------------------
                     //var strWithoutSpaces = url2.Replace("%20", " ");
@@ -523,7 +525,10 @@ namespace vkaudioposter
 
                                 
                                 label8.Text = "Результаты поиска: " + SearchingList.Count;
+                                if (PB_Download.Value >= PB_Download.Maximum - 1)
+                                    PB_Download.Value = 0;
                                 PB_Download.Value += 1;
+                                
 
                             }));
                             existcounter++;
@@ -537,6 +542,8 @@ namespace vkaudioposter
                             {
                                 label8.Text = "Результаты поиска: " + SearchingList.Count;
                                 // label6.Text = "Ищем в поиске треки";
+                                if (PB_Download.Value >= PB_Download.Maximum - 1)
+                                    PB_Download.Value = 0;
                                 PB_Download.Value += 1;
 
                             }));
@@ -580,6 +587,8 @@ namespace vkaudioposter
             {
                 //resmes = 1;
                 // label6.Text = "Ищем в поиске треки";
+                if (PB_Download.Value >= PB_Download.Maximum - 1)
+                    PB_Download.Value = 0;
                 PB_Download.Value += 1;
             }));
             return;
@@ -799,11 +808,11 @@ namespace vkaudioposter
             string filePath = photofilename;
             //downloaded = false; //фотка не скачана - скачать заново тип
              addedcounter = 0;
-            if (PB_Download.Value == 100)
+            if (PB_Download.Value >= PB_Download.Maximum-1)
                 PB_Download.Value = 0;
             PB_Download.Value = 0;
 
-            if (progressBar1.Value == 100)
+            if (progressBar1.Value >= progressBar1.Maximum-1)
                 progressBar1.Value = 0;
 
             progressBar1.Value = 0;
@@ -897,6 +906,8 @@ namespace vkaudioposter
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             MessageBoxIcon iconsMB = MessageBoxIcon.Question;
             DialogResult result;
+            if (PB_Download.Value >= PB_Download.Maximum - 1)
+                PB_Download.Value = 0;
             PB_Download.Value += 1;
 
             result = MessageBox.Show(message, caption, buttons, iconsMB);
@@ -907,11 +918,11 @@ namespace vkaudioposter
                 button3.Enabled = false;
                 button6.Enabled = false;
 
-                PB_Download.Value += 1;
+                //PB_Download.Value += 1;
                 if (posted == false)
                     AddTracksToAttachments(); //добавили в аттачи выбранные треки
                                               // AddPicture(); //добавить в аттачи выбранную фотку
-                PB_Download.Value += 1;                          //Добавим фото в аттачи
+               // PB_Download.Value += 1;                          //Добавим фото в аттачи
 
                 if ((image_added == true) && (posted == false))
                 {
@@ -919,12 +930,16 @@ namespace vkaudioposter
                     {
                         AddPhotoToAttachFromUrl();
                         radioButton1.Enabled = false;
+                        if (PB_Download.Value >= PB_Download.Maximum - 1)
+                            PB_Download.Value = 0;
                         PB_Download.Value += 1;
                     }
                     else
                     {
                         AddPhotoToAttachFromPC();
                         radioButton2.Enabled = false;
+                        if (PB_Download.Value >= PB_Download.Maximum - 1)
+                            PB_Download.Value = 0;
                         PB_Download.Value += 1;
                     }
                 }
@@ -942,14 +957,20 @@ namespace vkaudioposter
 
                 // if (posted == true)
                 // LoadHistoryFileToServer();
+                if (PB_Download.Value >= PB_Download.Maximum - 1)
+                    PB_Download.Value = 0;
                 PB_Download.Value += 1;
 
                 //File.Delete(filepath_archive);
                 if (CHB_ToAudio.Checked == true)
                     AddMusicToPublic();
 
+                if (PB_Download.Value >= PB_Download.Maximum - 1)
+                    PB_Download.Value = 0;
                 PB_Download.Value += 1;
                 PosterOnWall(attachments, flag);
+                if (PB_Download.Value >= PB_Download.Maximum - 1)
+                    PB_Download.Value = 0;
                 PB_Download.Value += 5;
                 //Добавляем ВСЕ найденные треки в группу, неважно что пользователь там навыбирал
                 //AddMusicToPublic();
@@ -1079,15 +1100,21 @@ namespace vkaudioposter
                 responseImg = Encoding.ASCII.GetString(wc.UploadFile(uploadurl, filename));
                 responseImg.GetHashCode();
             }
-
+            //ReadOnlyCollection<Photo> photolist = new ReadOnlyCollection <Photo>;
             //добавили стиль в хэштеги
             style = GetStylec();
-            if (style != null)
-            {
-                style = style.Replace("/", "");
-                style = style.Replace(" ", " #");
-            }
-            string HashTags_style = HashTags +" " + style;
+
+            //сделать проверку на существование
+            //if (style != null)
+            //{
+            //    style = style.Replace("/", "");
+            //    style = style.Replace(" ", " #");
+            //    string HashTags_style = HashTags + " " + style;
+            //    var photolist = api.Photo.SaveWallPhoto(responseImg, ownerid3, groupid3, HashTags_style); //Сохранили фото на стену
+            //}
+            style = style.Replace("/", "");
+            style = style.Replace(" ", " #");
+            string HashTags_style = HashTags + " " + style;
             var photolist = api.Photo.SaveWallPhoto(responseImg, ownerid3, groupid3, HashTags_style); //Сохранили фото на стену
             return photolist;
         }
@@ -1308,10 +1335,10 @@ namespace vkaudioposter
         // обработчик события Tick таймера
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (PB_Download.Value >= 98)
+            if (PB_Download.Value >= PB_Download.Maximum-1)
                 PB_Download.Value = 0;
 
-            if (progressBar1.Value >= 99)
+            if (progressBar1.Value >= progressBar1.Maximum-1)
                 progressBar1.Value = 0;
             // if()
             //curDate = DateTime.Now.ToShortDateString();
@@ -1341,7 +1368,7 @@ namespace vkaudioposter
             else
                 richTextBox1.Text = "Release: " + curDate + "\n#HighVolumeMusic #HVM @hvmlabel #top #edm #fresh #music #new #свежак #электронная #музыка #топ";
 
-            if (PB_Download.Value == 100)
+            if (PB_Download.Value == PB_Download.Maximum)
                 PB_Download.Value = 0;
             //Обновление времени
             UpdatingTime();
@@ -1504,6 +1531,8 @@ namespace vkaudioposter
             Invoke(new Action(() =>
             {
                 label6.Text = "Ищем в поиске треки";
+                if (PB_Download.Value >= PB_Download.Maximum - 1)
+                    PB_Download.Value = 0;
                 PB_Download.Value += 1;
             }));
             // await MakeUrlFromLines(filechartname);
@@ -1514,8 +1543,10 @@ namespace vkaudioposter
                // labelStatus.Text = "Остановлен";
                 label6.Text = "Список треков обработан, найдены песни";
                 button3.Enabled = true; //попытка обращения к элементу не в том потоке
+                if (PB_Download.Value >= PB_Download.Maximum - 1)
+                    PB_Download.Value = 0;
                 PB_Download.Value += 1;
-               // buttonStop.Enabled = false;
+                // buttonStop.Enabled = false;
             }));
            // button3.Enabled = true; //попытка обращения к элементу не в том потоке
       //    label6.Text = "Список треков обработан, найдены песни";
@@ -1696,13 +1727,15 @@ namespace vkaudioposter
             posted = false;
                addedcounter = 0;
                 GetStylec();
+            if (PB_Download.Value >= PB_Download.Maximum - 1)
+                PB_Download.Value = 0;
             PB_Download.Value += 1;
             //MakeUrl From Lines
             // Task t = LoadListOfTracksAsync();
             // t.Wait():
             // Initializes the variables to pass to the MessageBox.Show method.
 
-                Thread myThread = new Thread(new ThreadStart(LoadListOfTracks)); //ошибка в listbox.add - метод в другом потоке
+            Thread myThread = new Thread(new ThreadStart(LoadListOfTracks)); //ошибка в listbox.add - метод в другом потоке
                 myThread.Name = "Поток скачки LoadListOfTracks";
                 myThread.Start(); // запускаем поток
                                   // if (myThread.ThreadState ==)
@@ -1710,9 +1743,11 @@ namespace vkaudioposter
                                   // LoadListOfTracks(); //== MakeUrlFromLines(filechartname);
                                   // MakeUrlFromLines(filechartname);
                                   // resp_flag = 1;
-                PB_Download.Value += 5;
-                //Application.DoEvents();
-                Thread.Sleep(1000);
+            if (PB_Download.Value >= PB_Download.Maximum - 1)
+                PB_Download.Value = 0;
+            PB_Download.Value += 5;
+            //Application.DoEvents();
+            Thread.Sleep(1000);
             if (resmes == 1)
             {
                 button1.Enabled = true;
@@ -1728,10 +1763,10 @@ namespace vkaudioposter
            // Thread myThread2 = new Thread(new ThreadStart(AddPicture)); //ошибка в listbox.add - метод в другом потоке
            // myThread2.Name = "Поток скачки AddPicture";
            // myThread2.Start();
-            AddPicture();           
-           
+            AddPicture();
+
             // radioButton2.Enabled = false;
-            PB_Download.Value += 5;
+
            
         }
 
@@ -1825,7 +1860,7 @@ namespace vkaudioposter
             label4.Visible = true; //prewiev text
             flag = 2;
             button2.Enabled = false;
-            PB_Download.Value += 1;
+            //PB_Download.Value += 1;
             //radioButton2.Enabled = false;
         }
 
@@ -1839,7 +1874,7 @@ namespace vkaudioposter
             label4.Visible = true; //prewiev text
             flag = 2;
             button2.Enabled = false;
-            PB_Download.Value += 1;
+            //PB_Download.Value += 1;
             // radioButton2.Enabled = false;
         }
 
@@ -1974,7 +2009,10 @@ namespace vkaudioposter
             Invoke(new Action(() =>
             {
                 label6.Text = "Картинка скачана";
+                if (PB_Download.Value >= PB_Download.Maximum - 1)
+                    PB_Download.Value = 0;
                 PB_Download.Value += 1;
+
             }));
        //     label6.Text = "Картинка скачана";
             return ;
@@ -2619,6 +2657,11 @@ namespace vkaudioposter
         }
 
         private void PB_Download_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
         {
 
         }
