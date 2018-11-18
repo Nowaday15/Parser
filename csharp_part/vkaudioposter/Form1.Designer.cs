@@ -55,17 +55,30 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.BT_Repost = new System.Windows.Forms.Button();
-            this.BT_PlayPause = new System.Windows.Forms.Button();
             this.RB_Auto = new System.Windows.Forms.RadioButton();
             this.BT_ManualParser = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.BTN_DelImageFrom = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.LB_version = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.CHB_ToAudio = new System.Windows.Forms.CheckBox();
+            this.chk_repost = new System.Windows.Forms.CheckBox();
+            this.chk_openbrowser = new System.Windows.Forms.CheckBox();
+            this.CB_Styles = new System.Windows.Forms.ComboBox();
+            this.tb_counter = new System.Windows.Forms.TrackBar();
+            this.lb_counttracks = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.RB_top100 = new System.Windows.Forms.RadioButton();
+            this.RB_Tracks = new System.Windows.Forms.RadioButton();
+            this.BTN_DelImageFrom = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BT_PlayPause = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.Btn_DeleteTrackFromSelectedList = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.TSMENU_File = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMENU_Save = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMENU_Reset = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,25 +89,12 @@
             this.TSMENU_About = new System.Windows.Forms.ToolStripMenuItem();
             this.repostToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.измененияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CHB_ToAudio = new System.Windows.Forms.CheckBox();
-            this.chk_repost = new System.Windows.Forms.CheckBox();
-            this.chk_openbrowser = new System.Windows.Forms.CheckBox();
-            this.CB_Styles = new System.Windows.Forms.ComboBox();
-            this.tb_counter = new System.Windows.Forms.TrackBar();
-            this.lb_counttracks = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.RB_top100 = new System.Windows.Forms.RadioButton();
-            this.RB_Tracks = new System.Windows.Forms.RadioButton();
-            this.Btn_DeleteTrackFromSelectedList = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_counter)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -304,17 +304,6 @@
             this.BT_Repost.Visible = false;
             this.BT_Repost.Click += new System.EventHandler(this.BT_Repost_Click);
             // 
-            // BT_PlayPause
-            // 
-            this.BT_PlayPause.Image = ((System.Drawing.Image)(resources.GetObject("BT_PlayPause.Image")));
-            this.BT_PlayPause.Location = new System.Drawing.Point(143, 130);
-            this.BT_PlayPause.Name = "BT_PlayPause";
-            this.BT_PlayPause.Size = new System.Drawing.Size(24, 23);
-            this.BT_PlayPause.TabIndex = 59;
-            this.BT_PlayPause.UseVisualStyleBackColor = true;
-            this.BT_PlayPause.Visible = false;
-            this.BT_PlayPause.Click += new System.EventHandler(this.BT_PlayPause_Click);
-            // 
             // RB_Auto
             // 
             this.RB_Auto.AutoSize = true;
@@ -338,19 +327,6 @@
             this.BT_ManualParser.Visible = false;
             this.BT_ManualParser.Click += new System.EventHandler(this.BT_ManualParser_Click);
             // 
-            // button3
-            // 
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(191, 130);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(135, 23);
-            this.button3.TabIndex = 40;
-            this.button3.Text = "Добавить во вложку";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.radioButton1);
@@ -363,41 +339,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(315, 241);
             this.panel2.TabIndex = 50;
-            // 
-            // BTN_DelImageFrom
-            // 
-            this.BTN_DelImageFrom.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BTN_DelImageFrom.Image = ((System.Drawing.Image)(resources.GetObject("BTN_DelImageFrom.Image")));
-            this.BTN_DelImageFrom.Location = new System.Drawing.Point(293, 0);
-            this.BTN_DelImageFrom.Name = "BTN_DelImageFrom";
-            this.BTN_DelImageFrom.Size = new System.Drawing.Size(22, 23);
-            this.BTN_DelImageFrom.TabIndex = 48;
-            this.BTN_DelImageFrom.UseVisualStyleBackColor = false;
-            this.BTN_DelImageFrom.Click += new System.EventHandler(this.BTN_DelImageFrom_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(189, 169);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(127, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Открыть картинку";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(314, 166);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
             // 
             // checkBox1
             // 
@@ -437,91 +378,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(683, 24);
             this.menuStrip1.TabIndex = 53;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // TSMENU_File
-            // 
-            this.TSMENU_File.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TSMENU_Save,
-            this.TSMENU_Reset});
-            this.TSMENU_File.Image = ((System.Drawing.Image)(resources.GetObject("TSMENU_File.Image")));
-            this.TSMENU_File.Name = "TSMENU_File";
-            this.TSMENU_File.Size = new System.Drawing.Size(64, 20);
-            this.TSMENU_File.Text = "Файл";
-            this.TSMENU_File.Visible = false;
-            this.TSMENU_File.Click += new System.EventHandler(this.TSMENU_File_Click);
-            // 
-            // TSMENU_Save
-            // 
-            this.TSMENU_Save.Name = "TSMENU_Save";
-            this.TSMENU_Save.Size = new System.Drawing.Size(160, 22);
-            this.TSMENU_Save.Text = "Отложенные";
-            this.TSMENU_Save.Visible = false;
-            this.TSMENU_Save.Click += new System.EventHandler(this.TSMENU_Save_Click);
-            // 
-            // TSMENU_Reset
-            // 
-            this.TSMENU_Reset.Name = "TSMENU_Reset";
-            this.TSMENU_Reset.Size = new System.Drawing.Size(160, 22);
-            this.TSMENU_Reset.Text = "Предложенные";
-            this.TSMENU_Reset.Click += new System.EventHandler(this.TSMENU_Reset_Click);
-            // 
-            // парсерToolStripMenuItem
-            // 
-            this.парсерToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("парсерToolStripMenuItem.Image")));
-            this.парсерToolStripMenuItem.Name = "парсерToolStripMenuItem";
-            this.парсерToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.парсерToolStripMenuItem.Text = "Парсер";
-            this.парсерToolStripMenuItem.Click += new System.EventHandler(this.парсерToolStripMenuItem_Click);
-            // 
-            // TSMENU_Settings
-            // 
-            this.TSMENU_Settings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.SaveSettToolStripMenuItem,
-            this.ResetSettToolStripMenuItem});
-            this.TSMENU_Settings.Image = ((System.Drawing.Image)(resources.GetObject("TSMENU_Settings.Image")));
-            this.TSMENU_Settings.Name = "TSMENU_Settings";
-            this.TSMENU_Settings.Size = new System.Drawing.Size(95, 20);
-            this.TSMENU_Settings.Text = "Настройки";
-            this.TSMENU_Settings.Click += new System.EventHandler(this.TSMENU_Settings_Click);
-            // 
-            // SaveSettToolStripMenuItem
-            // 
-            this.SaveSettToolStripMenuItem.Name = "SaveSettToolStripMenuItem";
-            this.SaveSettToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.SaveSettToolStripMenuItem.Text = "Задать";
-            this.SaveSettToolStripMenuItem.Click += new System.EventHandler(this.SaveSettToolStripMenuItem_Click);
-            // 
-            // ResetSettToolStripMenuItem
-            // 
-            this.ResetSettToolStripMenuItem.Name = "ResetSettToolStripMenuItem";
-            this.ResetSettToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.ResetSettToolStripMenuItem.Text = "Сбросить";
-            this.ResetSettToolStripMenuItem.Click += new System.EventHandler(this.ResetSettToolStripMenuItem_Click);
-            // 
-            // TSMENU_About
-            // 
-            this.TSMENU_About.Image = ((System.Drawing.Image)(resources.GetObject("TSMENU_About.Image")));
-            this.TSMENU_About.Name = "TSMENU_About";
-            this.TSMENU_About.Size = new System.Drawing.Size(110, 20);
-            this.TSMENU_About.Text = "О программе";
-            this.TSMENU_About.Click += new System.EventHandler(this.TSMENU_About_Click);
-            // 
-            // repostToolStripMenuItem
-            // 
-            this.repostToolStripMenuItem.Image = global::vkaudioposter.Properties.Resources.listen;
-            this.repostToolStripMenuItem.Name = "repostToolStripMenuItem";
-            this.repostToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
-            this.repostToolStripMenuItem.Text = "AutoRepost";
-            this.repostToolStripMenuItem.Click += new System.EventHandler(this.repostToolStripMenuItem_Click);
-            // 
-            // измененияToolStripMenuItem
-            // 
-            this.измененияToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("измененияToolStripMenuItem.Image")));
-            this.измененияToolStripMenuItem.Name = "измененияToolStripMenuItem";
-            this.измененияToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
-            this.измененияToolStripMenuItem.Text = "Изменения";
-            this.измененияToolStripMenuItem.Visible = false;
-            this.измененияToolStripMenuItem.Click += new System.EventHandler(this.измененияToolStripMenuItem_Click);
             // 
             // CHB_ToAudio
             // 
@@ -623,6 +479,65 @@
             this.RB_Tracks.Visible = false;
             this.RB_Tracks.CheckedChanged += new System.EventHandler(this.RB_Tracks_CheckedChanged);
             // 
+            // BTN_DelImageFrom
+            // 
+            this.BTN_DelImageFrom.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BTN_DelImageFrom.Image = ((System.Drawing.Image)(resources.GetObject("BTN_DelImageFrom.Image")));
+            this.BTN_DelImageFrom.Location = new System.Drawing.Point(293, 0);
+            this.BTN_DelImageFrom.Name = "BTN_DelImageFrom";
+            this.BTN_DelImageFrom.Size = new System.Drawing.Size(22, 23);
+            this.BTN_DelImageFrom.TabIndex = 48;
+            this.BTN_DelImageFrom.UseVisualStyleBackColor = false;
+            this.BTN_DelImageFrom.Click += new System.EventHandler(this.BTN_DelImageFrom_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(189, 169);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(127, 23);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Открыть картинку";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(314, 166);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
+            // 
+            // BT_PlayPause
+            // 
+            this.BT_PlayPause.Image = ((System.Drawing.Image)(resources.GetObject("BT_PlayPause.Image")));
+            this.BT_PlayPause.Location = new System.Drawing.Point(143, 130);
+            this.BT_PlayPause.Name = "BT_PlayPause";
+            this.BT_PlayPause.Size = new System.Drawing.Size(24, 23);
+            this.BT_PlayPause.TabIndex = 59;
+            this.BT_PlayPause.UseVisualStyleBackColor = true;
+            this.BT_PlayPause.Visible = false;
+            this.BT_PlayPause.Click += new System.EventHandler(this.BT_PlayPause_Click);
+            // 
+            // button3
+            // 
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(191, 130);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(135, 23);
+            this.button3.TabIndex = 40;
+            this.button3.Text = "Добавить во вложку";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Btn_DeleteTrackFromSelectedList
             // 
             this.Btn_DeleteTrackFromSelectedList.Image = ((System.Drawing.Image)(resources.GetObject("Btn_DeleteTrackFromSelectedList.Image")));
@@ -675,6 +590,91 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // TSMENU_File
+            // 
+            this.TSMENU_File.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMENU_Save,
+            this.TSMENU_Reset});
+            this.TSMENU_File.Image = ((System.Drawing.Image)(resources.GetObject("TSMENU_File.Image")));
+            this.TSMENU_File.Name = "TSMENU_File";
+            this.TSMENU_File.Size = new System.Drawing.Size(64, 20);
+            this.TSMENU_File.Text = "Файл";
+            this.TSMENU_File.Visible = false;
+            this.TSMENU_File.Click += new System.EventHandler(this.TSMENU_File_Click);
+            // 
+            // TSMENU_Save
+            // 
+            this.TSMENU_Save.Name = "TSMENU_Save";
+            this.TSMENU_Save.Size = new System.Drawing.Size(160, 22);
+            this.TSMENU_Save.Text = "Отложенные";
+            this.TSMENU_Save.Visible = false;
+            this.TSMENU_Save.Click += new System.EventHandler(this.TSMENU_Save_Click);
+            // 
+            // TSMENU_Reset
+            // 
+            this.TSMENU_Reset.Name = "TSMENU_Reset";
+            this.TSMENU_Reset.Size = new System.Drawing.Size(160, 22);
+            this.TSMENU_Reset.Text = "Предложенные";
+            this.TSMENU_Reset.Click += new System.EventHandler(this.TSMENU_Reset_Click);
+            // 
+            // парсерToolStripMenuItem
+            // 
+            this.парсерToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("парсерToolStripMenuItem.Image")));
+            this.парсерToolStripMenuItem.Name = "парсерToolStripMenuItem";
+            this.парсерToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.парсерToolStripMenuItem.Text = "Парсер";
+            this.парсерToolStripMenuItem.Click += new System.EventHandler(this.парсерToolStripMenuItem_Click);
+            // 
+            // TSMENU_Settings
+            // 
+            this.TSMENU_Settings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SaveSettToolStripMenuItem,
+            this.ResetSettToolStripMenuItem});
+            this.TSMENU_Settings.Image = ((System.Drawing.Image)(resources.GetObject("TSMENU_Settings.Image")));
+            this.TSMENU_Settings.Name = "TSMENU_Settings";
+            this.TSMENU_Settings.Size = new System.Drawing.Size(95, 20);
+            this.TSMENU_Settings.Text = "Настройки";
+            this.TSMENU_Settings.Click += new System.EventHandler(this.TSMENU_Settings_Click);
+            // 
+            // SaveSettToolStripMenuItem
+            // 
+            this.SaveSettToolStripMenuItem.Name = "SaveSettToolStripMenuItem";
+            this.SaveSettToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.SaveSettToolStripMenuItem.Text = "Задать";
+            this.SaveSettToolStripMenuItem.Click += new System.EventHandler(this.SaveSettToolStripMenuItem_Click);
+            // 
+            // ResetSettToolStripMenuItem
+            // 
+            this.ResetSettToolStripMenuItem.Name = "ResetSettToolStripMenuItem";
+            this.ResetSettToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.ResetSettToolStripMenuItem.Text = "Сбросить";
+            this.ResetSettToolStripMenuItem.Click += new System.EventHandler(this.ResetSettToolStripMenuItem_Click);
+            // 
+            // TSMENU_About
+            // 
+            this.TSMENU_About.Image = ((System.Drawing.Image)(resources.GetObject("TSMENU_About.Image")));
+            this.TSMENU_About.Name = "TSMENU_About";
+            this.TSMENU_About.Size = new System.Drawing.Size(110, 20);
+            this.TSMENU_About.Text = "О программе";
+            this.TSMENU_About.Click += new System.EventHandler(this.TSMENU_About_Click);
+            // 
+            // repostToolStripMenuItem
+            // 
+            this.repostToolStripMenuItem.Image = global::vkaudioposter.Properties.Resources.listen;
+            this.repostToolStripMenuItem.Name = "repostToolStripMenuItem";
+            this.repostToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.repostToolStripMenuItem.Text = "AutoRepost";
+            this.repostToolStripMenuItem.Click += new System.EventHandler(this.repostToolStripMenuItem_Click);
+            // 
+            // измененияToolStripMenuItem
+            // 
+            this.измененияToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("измененияToolStripMenuItem.Image")));
+            this.измененияToolStripMenuItem.Name = "измененияToolStripMenuItem";
+            this.измененияToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.измененияToolStripMenuItem.Text = "Изменения";
+            this.измененияToolStripMenuItem.Visible = false;
+            this.измененияToolStripMenuItem.Click += new System.EventHandler(this.измененияToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AllowDrop = true;
@@ -719,17 +719,18 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "High Volume Music Parser";
             this.TransparencyKey = System.Drawing.SystemColors.WindowFrame;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_counter)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

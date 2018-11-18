@@ -224,12 +224,12 @@ namespace vkaudioposter
                     //LB_version.Enabled = true;
                     // LB_version.Text = "Версия сборки - v{0}" + ver.ToString(4);
 
-                    Text = "High Volume Music Parser.                              Версия сборки - v_" + ver.ToString(4);
+                    Text = "High Volume Music Parser_v." + ver.ToString(4);
                 }
                 else
                 {
 
-                    Text = "High Volume Music Parser.                              Версия локальной сборки - v." + Assembly.GetExecutingAssembly().GetName().Version.ToString();
+                    Text = "High Volume Music Parser.Версия локальной сборки - v." + Assembly.GetExecutingAssembly().GetName().Version.ToString();
                     // LB_version.Enabled = false;
                 }
 
@@ -2664,6 +2664,13 @@ namespace vkaudioposter
         private void progressBar1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //exit application when form is closed
+
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

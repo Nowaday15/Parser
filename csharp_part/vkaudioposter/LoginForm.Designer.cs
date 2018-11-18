@@ -331,6 +331,7 @@
             this.MinimizeBox = false;
             this.Name = "LoginForm";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "LoginForm";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.LoginForm_Load);

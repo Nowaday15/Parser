@@ -190,6 +190,7 @@
             this.MinimizeBox = false;
             this.Name = "Reposter";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "Reposter";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Reposter_Load);

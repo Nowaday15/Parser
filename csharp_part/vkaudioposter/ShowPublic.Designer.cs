@@ -36,6 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(339, 260);
             this.Name = "ShowPublic";
+            this.ShowInTaskbar = false;
             this.Text = "ShowPublic";
             this.Load += new System.EventHandler(this.ShowPublic_Load);
             this.ResumeLayout(false);
